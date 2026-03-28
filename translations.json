@@ -1,0 +1,68 @@
+{
+  "ar": {
+    "site_name": "PyLogic AI",
+    "hero_title": "PyLogic AI: حيث يلتقي مَنطق الأكواد بسِحر الذكاء.",
+    "hero_subtitle": "نحن لا نبني مجرد برمجيات؛ نحن نصيغُ تحفاً رقمية تجمع بين صلابة بايثون، ذكاء الخوارزميات، وأناقة التصميم الكلاسيكي المعاصر. وكالتك الشريكة في صناعة المستقبل الرقمي.",
+    "about_title": "من نحن",
+    "about_text": "في PyLogic AI، نؤمن أن التكنولوجيا ليست مجرد أدوات، بل هي فنّ يخدم الإنسان. تخصصنا في تطويع الذكاء الاصطناعي ودمجه في حلول برمجية متكاملة (Full-Stack) تمنح أعمالك القوة والتميز. من تطوير التطبيقات المعقدة إلى تصميم واجهات المستخدم الجذابة، نحن نضع المنطق في خدمة الإبداع.",
+    "services_title": "خدماتنا",
+    "services": [
+      { "name": "AI-Powered Development", "desc": "دمج نماذج الذكاء الاصطناعي في أنظمة الأعمال.", "icon": "brain" },
+      { "name": "Full-Stack Solutions", "desc": "بناء مواقع متكاملة من الصفر بأعلى معايير الأمان.", "icon": "code-branch" },
+      { "name": "High-End UI/UX", "desc": "تصميم واجهات مستخدم بلمسة \"Nexus\" الكلاسيكية التي تعودت عليها.", "icon": "paintbrush" },
+      { "name": "Strategic SEO", "desc": "تحسين ظهور أعمالك عالمياً لتكون في الصدارة.", "icon": "chart-line" }
+    ],
+    "portfolio_title": "أحدث أعمالنا",
+    "portfolio": [
+      { "title": "منصة تحليلات تنبؤية", "desc": "بُنيت بـ FastAPI + React، تتوقع اتجاهات المبيعات بدقة 95%.", "img": "https://placehold.co/600x400/111122/A3FF00?text=AI+Dashboard" },
+      { "title": "منصة تجارة إلكترونية ذكية", "desc": "Django + توصيات مخصصة بالذكاء الاصطناعي، زيادة المبيعات 40%.", "img": "https://placehold.co/600x400/111122/A3FF00?text=Ecommerce+AI" },
+      { "title": "روبوت أتمتة العمليات", "desc": "أتمتة مهام إدارية معقدة باستخدام بايثون وSelenium، توفير 200 ساعة/شهر.", "img": "https://placehold.co/600x400/111122/A3FF00?text=Automation+Bot" }
+    ],
+    "contact_title": "هيا نبني مستقبلك الرقمي",
+    "contact_sub": "تواصل معنا اليوم، وسنقوم بتحويل فكرتك إلى نظام حي يتنفس بيانات.",
+    "whatsapp_btn": "ابدأ مشروعك الذكي الآن",
+    "email_btn": "استشارة تقنية مجانية",
+    "form_name": "الاسم الكامل",
+    "form_email": "البريد الإلكتروني",
+    "form_message": "رسالتك",
+    "form_submit": "أرسل طلبك الآن",
+    "footer_text": "© 2025 PyLogic AI - حيث يلتقي منطق الأكواد بسحر الذكاء",
+    "nav_home": "الرئيسية",
+    "nav_services": "خدماتنا",
+    "nav_portfolio": "أعمالنا",
+    "nav_contact": "تواصل معنا"
+  },
+  "en": {
+    "site_name": "PyLogic AI",
+    "hero_title": "PyLogic AI: Where Code Logic Meets AI Magic.",
+    "hero_subtitle": "We don’t just build software; we craft digital masterpieces combining Python's robustness, algorithmic intelligence, and contemporary classic design. Your partner in shaping the digital future.",
+    "about_title": "About Us",
+    "about_text": "At PyLogic AI, we believe technology is not just tools—it’s an art that serves humanity. We specialize in harnessing AI and integrating it into full-stack solutions that empower your business with strength and distinction. From complex applications to captivating UI/UX, we put logic in the service of creativity.",
+    "services_title": "Our Services",
+    "services": [
+      { "name": "AI-Powered Development", "desc": "Integrate AI models into business systems.", "icon": "brain" },
+      { "name": "Full-Stack Solutions", "desc": "Build complete websites from scratch with top security standards.", "icon": "code-branch" },
+      { "name": "High-End UI/UX", "desc": "Design user interfaces with the classic 'Nexus' touch you’re accustomed to.", "icon": "paintbrush" },
+      { "name": "Strategic SEO", "desc": "Boost your global visibility to lead the pack.", "icon": "chart-line" }
+    ],
+    "portfolio_title": "Latest Work",
+    "portfolio": [
+      { "title": "Predictive Analytics Platform", "desc": "Built with FastAPI + React, predicts sales trends with 95% accuracy.", "img": "https://placehold.co/600x400/111122/A3FF00?text=AI+Dashboard" },
+      { "title": "AI-Powered E‑commerce", "desc": "Django + personalized AI recommendations, boosting sales by 40%.", "img": "https://placehold.co/600x400/111122/A3FF00?text=Ecommerce+AI" },
+      { "title": "Process Automation Bot", "desc": "Python + Selenium automates complex admin tasks, saving 200 hours/month.", "img": "https://placehold.co/600x400/111122/A3FF00?text=Automation+Bot" }
+    ],
+    "contact_title": "Let’s Build Your Digital Future",
+    "contact_sub": "Contact us today, and we’ll turn your idea into a living, data-driven system.",
+    "whatsapp_btn": "Launch Your AI Project",
+    "email_btn": "Free Tech Consultation",
+    "form_name": "Full Name",
+    "form_email": "Email Address",
+    "form_message": "Your Message",
+    "form_submit": "Send Request",
+    "footer_text": "© 2025 PyLogic AI - Where Code Logic Meets AI Magic",
+    "nav_home": "Home",
+    "nav_services": "Services",
+    "nav_portfolio": "Portfolio",
+    "nav_contact": "Contact"
+  }
+}

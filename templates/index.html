@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}" dir="{{ 'rtl' if lang == 'ar' else 'ltr' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>{{ t.site_name }} | {{ t.hero_title }}</title>
+    <!-- Tailwind CSS + Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-[#0A0A1F]/90 backdrop-blur-md border-b border-[#A3FF00]/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2 space-x-reverse">
+                <i class="fas fa-gem text-3xl text-[#A3FF00]"></i>
+                <span class="text-2xl font-bold tracking-tight text-white">{{ t.site_name }}</span>
+            </div>
+            <nav class="hidden md:flex space-x-8 space-x-reverse">
+                <a href="#home" class="nav-link text-white hover:text-[#A3FF00] transition">{{ t.nav_home }}</a>
+                <a href="#services" class="nav-link text-white hover:text-[#A3FF00] transition">{{ t.nav_services }}</a>
+                <a href="#portfolio" class="nav-link text-white hover:text-[#A3FF00] transition">{{ t.nav_portfolio }}</a>
+                <a href="#contact" class="nav-link text-white hover:text-[#A3FF00] transition">{{ t.nav_contact }}</a>
+                <!-- Language Switcher -->
+                <div class="flex gap-2 mr-4">
+                    <button onclick="setLanguage('ar')" class="text-sm px-2 py-1 rounded {% if lang == 'ar' %}bg-[#A3FF00] text-black{% else %}text-white{% endif %}">عربي</button>
+                    <button onclick="setLanguage('en')" class="text-sm px-2 py-1 rounded {% if lang == 'en' %}bg-[#A3FF00] text-black{% else %}text-white{% endif %}">EN</button>
+                </div>
+            </nav>
+            <button class="md:hidden text-white text-2xl">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section مع Canvas خلفية -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <canvas id="dataFlowCanvas" class="absolute top-0 left-0 w-full h-full -z-10"></canvas>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">{{ t.hero_title }}</h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10">{{ t.hero_subtitle }}</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/967784691131?text={{ 'أهلاً، أريد بدء مشروعي الذكي مع PyLogic AI' if lang == 'ar' else 'Hello, I want to start my AI project with PyLogic AI' }}" target="_blank" class="btn-primary px-8 py-4 rounded-full text-lg font-semibold shadow-lg transition inline-block">
+                    {{ t.whatsapp_btn }} <i class="fab fa-whatsapp mr-2"></i>
+                </a>
+                <a href="mailto:hello.pylogicai@gmail.com?subject={{ 'استشارة تقنية' if lang == 'ar' else 'Tech Consultation' }}" class="px-8 py-4 rounded-full border border-[#A3FF00] text-[#A3FF00] hover:bg-[#A3FF00]/10 transition inline-block">
+                    {{ t.email_btn }} <i class="far fa-envelope mr-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-24 bg-[#0A0A1F]">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">{{ t.about_title }}</h2>
+            <p class="text-gray-300 text-lg leading-relaxed">{{ t.about_text }}</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-[#111122]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">{{ t.services_title }}</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">{{ t.hero_subtitle.split('。')[0] if lang == 'zh' else t.services_title }}</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {% for service in t.services %}
+                <div class="service-card p-8 rounded-2xl text-center">
+                    <div class="icon text-5xl text-[#A3FF00] mb-6"><i class="fas fa-{{ service.icon }}"></i></div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">{{ service.name }}</h3>
+                    <p class="text-gray-400">{{ service.desc }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 bg-[#0A0A1F]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">{{ t.portfolio_title }}</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">{{ t.about_text[:80] }}...</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                {% for item in t.portfolio %}
+                <div class="portfolio-item bg-[#111122] rounded-2xl overflow-hidden">
+                    <img src="{{ item.img }}" alt="{{ item.title }}" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">{{ item.title }}</h3>
+                        <p class="text-gray-400 text-sm">{{ item.desc }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-[#111122]">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">{{ t.contact_title }}</h2>
+                <p class="text-gray-400">{{ t.contact_sub }}</p>
+            </div>
+            <form id="contactForm" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-medium mb-2">{{ t.form_name }}</label>
+                    <input type="text" name="name" required class="w-full p-3 rounded-lg bg-white/5 border border-[#A3FF00]/30 focus:border-[#A3FF00] transition">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">{{ t.form_email }}</label>
+                    <input type="email" name="email" required class="w-full p-3 rounded-lg bg-white/5 border border-[#A3FF00]/30 focus:border-[#A3FF00] transition">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">{{ t.form_message }}</label>
+                    <textarea name="message" rows="5" required class="w-full p-3 rounded-lg bg-white/5 border border-[#A3FF00]/30 focus:border-[#A3FF00] transition"></textarea>
+                </div>
+                <button type="submit" class="w-full btn-primary py-3 rounded-lg text-lg font-semibold transition">{{ t.form_submit }}</button>
+            </form>
+            <div class="mt-12 text-center text-gray-500 text-sm">
+                <i class="fas fa-lock"></i> {{ 'معلوماتك آمنة 100% | نستخدم معايير PEP 8 ومراجعة كود مزدوجة' if lang == 'ar' else 'Your info is 100% secure | We follow PEP 8 & double code review' }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-[#A3FF00]/20 text-center text-gray-500 text-sm">
+        <div class="container mx-auto px-6">
+            <p>{{ t.footer_text }}</p>
+            <div class="flex justify-center space-x-6 space-x-reverse mt-4">
+                <a href="#" class="hover:text-[#A3FF00]"><i class="fab fa-github text-xl"></i></a>
+                <a href="#" class="hover:text-[#A3FF00]"><i class="fab fa-linkedin text-xl"></i></a>
+                <a href="#" class="hover:text-[#A3FF00]"><i class="fab fa-twitter text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
