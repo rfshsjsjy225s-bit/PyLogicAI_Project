@@ -70,4 +70,9 @@ def contact():
         return jsonify({"status": "error", "message": str(e)}), 500
 
 if __name__ == '__main__':
+    from flask import send_from_directory
+
+@app.route('/sitemap.xml')
+def static_from_root():
+    return send_from_directory(app.root_path, 'sitemap.xml')
     app.run(debug=True)
